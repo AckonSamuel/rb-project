@@ -1,5 +1,5 @@
 import * as React from "react"
-import { BarChart, Users, Package, MessageCircle, Wallet, Settings, Shield, LayoutGrid , ChartColumnIncreasing} from "lucide-react";
+import { Users, Package, MessageCircle, Wallet, Settings, Shield, LayoutGrid , ChartColumnIncreasing} from "lucide-react";
 
 import {
   Sidebar,

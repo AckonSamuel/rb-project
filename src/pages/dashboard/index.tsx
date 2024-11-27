@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */ 
+
 import React from "react";
 import axios from "axios";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";

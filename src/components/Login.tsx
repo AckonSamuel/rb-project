@@ -35,6 +35,7 @@ const LoginPage: React.FC = () => {
       window.location.href = "/dashboard";
     } catch (error) {
       toast.dismiss();
+      console.log(error);
       toast.error("Login failed. Check your email and password.");
     } finally {
       setLoading(false);
