@@ -14,7 +14,8 @@ import {
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  ChartOptions
 } from "chart.js";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import Layout from "@/components/layout";
@@ -67,7 +68,7 @@ const Dashboard: React.FC<DashboardProps> = ({ reportData, error }) => {
     ],
   };
 
-  const barChartOptions = {
+  const barChartOptions: ChartOptions<"bar"> = {
     responsive: true,
     maintainAspectRatio: false, // Adjust chart to match container size
     indexAxis: "y", // Horizontal bars
@@ -83,7 +84,7 @@ const Dashboard: React.FC<DashboardProps> = ({ reportData, error }) => {
           size: 14, // Adjust size to match original
           weight: "normal",
         },
-        formatter: (value, context) => {
+        formatter: (value: any, context: any) => {
           // Custom formatter for the labels
           const labels = ["Launched", "Ongoing", "Sold"];
           return `${labels[context.dataIndex]} (${value})`;
@@ -97,7 +98,6 @@ const Dashboard: React.FC<DashboardProps> = ({ reportData, error }) => {
           color: "#ddd", // Light gray color for grid lines
         },
         ticks: {
-          beginAtZero: true, // Start X-axis at zero
           font: { size: 12 }, // Font size for ticks
           color: "#666", // Light gray ticks
         },
@@ -150,7 +150,7 @@ const Dashboard: React.FC<DashboardProps> = ({ reportData, error }) => {
       },
       tooltip: {
         callbacks: {
-          label: (tooltipItem) =>
+          label: (tooltipItem: any) =>
             `${tooltipItem.label}: ${tooltipItem.raw}%`, // Tooltip display
         },
       },
