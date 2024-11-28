@@ -56,7 +56,7 @@ function Calendar({
       components={{
         
          // Ignore TypeScript error
-        // @ts-expect-error
+        // @ts-expect-error: The third-party library lacks TypeScript definitions
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
