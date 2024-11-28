@@ -61,8 +61,9 @@ const PerfomanceChart: FC<PerfomanceData> = ({ data }) => {
                 backgroundColor: "white",
                 borderRadius: 100,
                 padding: 8,
-
             },
+            // Ignore TypeScript error
+            // @ts-ignore
             centerText: {
                 text: "565K", // Total Count value
                 subtext: "Total Count", // Description text

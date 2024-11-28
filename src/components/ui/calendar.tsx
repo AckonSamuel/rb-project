@@ -55,6 +55,8 @@ function Calendar({
       }}
       components={{
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
+         // Ignore TypeScript error
+        // @ts-ignore
         IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
