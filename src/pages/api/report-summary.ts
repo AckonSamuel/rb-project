@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const response = await axios.get(REPORT_SUMMARY_URL, {
       headers: { Authorization: `Bearer ${token}` },
     });
-
+    
     res.status(response.status).json(response.data);
   } catch (error: any) {
     res.status(error.response?.status || 500).json({

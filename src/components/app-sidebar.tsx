@@ -1,9 +1,18 @@
 import * as React from "react"
-import { Users, Package, MessageCircle, Wallet, Settings, Shield, LayoutGrid , ChartColumnIncreasing} from "lucide-react";
+import { Users, Package, MessageCircle, Wallet, Settings, Shield, LayoutGrid, ChartColumnIncreasing } from "lucide-react";
+import { IoIosMail } from "react-icons/io";
+import { FaBoxOpen } from "react-icons/fa";
+import { HiUserGroup } from "react-icons/hi2";
+import { IoBarChartSharp } from "react-icons/io5";
+import { IoGrid } from "react-icons/io5";
+import { FaWallet } from "react-icons/fa6";
+import { PiGearFineBold } from "react-icons/pi";
+import { BsShieldLockFill } from "react-icons/bs";
 
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -25,33 +34,33 @@ const data = {
         {
           title: "Overview",
           url: "#",
-          icon: <LayoutGrid size={20}/>,
+          icon: <IoGrid size={25} />,
           isActive: true,
         },
         {
           title: "Statistics",
           url: "#",
-          icon: <ChartColumnIncreasing size={20}/>,
+          icon: <IoBarChartSharp size={25} />,
         },
         {
           title: "Customers",
           url: "#",
-          icon: <Users size={20}/>,
+          icon: <HiUserGroup size={25} />,
         },
         {
           title: "Products",
           url: "#",
-          icon: <Package size={20}/>,
+          icon: <FaBoxOpen size={25} />,
         },
         {
           title: "Messages",
           url: "#",
-          icon: <MessageCircle size={20}/>,
+          icon: <IoIosMail size={30} />,
         },
         {
           title: "Wallet",
           url: "#",
-          icon: <Wallet size={20}/>,
+          icon: <FaWallet size={25} />,
         },
       ],
     },
@@ -62,12 +71,12 @@ const data = {
         {
           title: "Settings",
           url: "#",
-          icon: <Settings size={20}/>,
+          icon: <PiGearFineBold size={25} />,
         },
         {
           title: "Security",
           url: "#",
-          icon: <Shield size={20}/>,
+          icon: <BsShieldLockFill size={25} />,
         }
       ],
     },
@@ -76,7 +85,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props} className="bg-red-500">
+    <Sidebar {...props} className="bg-red-500" style={{ width: '200px'}}>
       <SidebarHeader>
         <h2 className="text-white text-center font-bold">RB</h2>
       </SidebarHeader>
@@ -84,15 +93,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         {/* We create a SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
           <SidebarGroup key={item.title}>
-            <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
+            <SidebarGroupLabel className="ml-4 text-white text-md">{item.title}</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {item.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild isActive={item.isActive}>
-                      <div>
-                      {item.icon}
-                      <a href={item.url}>{item.title}</a>
+                      <div className="text-sm flex mt-1 ml-4 gap-2">
+
+                        <div className=""> {item.icon}</div>
+                        <a href={item.url} className="ml-2">{item.title}</a>
                       </div>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -102,6 +112,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarGroup>
         ))}
       </SidebarContent>
+      <SidebarFooter>
+        <p className="text-white text-center text-sm">Version {data.versions[0]}</p>
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )

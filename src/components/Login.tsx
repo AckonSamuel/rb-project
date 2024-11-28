@@ -3,9 +3,10 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
+import { Eye, EyeOff } from 'lucide-react';
 import toast from "react-hot-toast";
 import Spinner from "@/components/ui/Spinner"; // Import Spinner component
+import { Checkbox } from "./ui/checkbox";
 
 type LoginForm = {
   email: string;
@@ -16,7 +17,11 @@ type LoginForm = {
 const LoginPage: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<LoginForm>();
   const [loading, setLoading] = useState(false);
-  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const onSubmit = async (data: LoginForm) => {
     setLoading(true);
@@ -43,44 +48,44 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-14">
-      <Card className="w-full md:w-[70%] lg:w-[90%] xl:w-[90%] flex flex-col md:flex-row p-6">
+    <div className="max-h-screen bg-gray-100 flex items-center justify-center py-14">
+      <Card className="w-full md:w-[70%] flex flex-col md:flex-row p-6">
         {/* Left Section - Login Form */}
         <div className="flex-1 space-y-4 pl-12 pr-16 pt-16">
-          <h2 className="text-4xl font-bold text-green-500 mb-2">Login</h2>
-          <p className="text-gray-600 mb-6">How do I get started?</p>
+          <h2 className="text-2xl font-bold text-[#9fea2e] mb-2">Login</h2>
+          <p className="text-gray-600 mb-6 text-md">How do I get started?</p>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* Email */}
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium mb-1">
+              <label htmlFor="email" className="block text-sm text-[#9fea2e] font-medium mb-1">
                 Email
               </label>
               <Input
                 id="email"
                 type="email"
                 {...register("email", { required: "Email is required" })}
-                className="w-full"
+                className="w-full rounded-full"
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
             </div>
 
             {/* Password */}
             <div className="mb-4 relative">
-              <label htmlFor="password" className="block text-sm font-medium mb-1">
+              <label htmlFor="password" className="block text-sm text-[#9fea2e] font-medium mb-1">
                 Password
               </label>
               <Input
                 id="password"
-                type={passwordVisible ? "text" : "password"}
+                type={showPassword ? "text" : "password"}
                 {...register("password", { required: "Password is required" })}
-                className="w-full"
+                className="w-full rounded-full border-gradient-to-r from-[#2E7D32] to-[#9fea2e]"
               />
               <button
                 type="button"
-                className="absolute right-3 top-3 text-gray-500"
-                onClick={() => setPasswordVisible(!passwordVisible)}
+                onClick={togglePasswordVisibility}
+                className="absolute inset-y-0 right-0 mt-6 pr-3 flex items-center text-gray-400 hover:text-gray-600"
               >
-                {passwordVisible ? "🙈" : "👁️"}
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
               {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
             </div>
@@ -88,8 +93,8 @@ const LoginPage: React.FC = () => {
             {/* Remember Me and Forgot Password */}
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center">
-                <Switch id="remember" {...register("remember")} />
-                <label htmlFor="remember" className="ml-2 text-sm">
+                <Checkbox id="remember" {...register("remember")} />
+                <label htmlFor="remember" className="ml-2 text-sm text-gray-600">
                   Remember me
                 </label>
               </div>
@@ -102,7 +107,7 @@ const LoginPage: React.FC = () => {
             <Button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-green-400 to-green-600 relative"
+              className="w-full rounded-full bg-gradient-to-r from-[#2E7D32] to-[#9fea2e] text-lg relative"
             >
               {loading ? (
                 <Spinner />  // Show spinner while loading

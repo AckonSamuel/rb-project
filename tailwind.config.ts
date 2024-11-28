@@ -64,7 +64,7 @@ export default {
 			'mercury': '#e6e5e4', 
 			'inch-worm': '#9fea2e', 
 			'xanadu': '#7e887f', 
-			'copper-rust': '#91544f', 
+			'copper-rust': '#ff9900', 
 			'dusty-gray': '#9e9a9a', 
 			'emerald': '#47d754', 
 			'bud': '#abadaa', 
