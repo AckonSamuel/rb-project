@@ -1,9 +1,7 @@
-//import PerformanceCard from "@/components/dashboard/PerformanceCard";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import PerformanceCard from "@/components/dashboard/PerformanceCard";
-import { Doughnut } from "react-chartjs-2";
 
 jest.mock("react-chartjs-2", () => ({
   Doughnut: jest.fn(() => <div data-testid="doughnut-chart"></div>),
