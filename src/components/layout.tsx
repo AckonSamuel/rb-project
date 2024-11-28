@@ -1,20 +1,29 @@
 import { AppSidebar } from "@/components/app-sidebar"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { Button } from "./ui/button"
+import { useRouter } from "next/router";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("/api/logout", { method: "POST" });
+      if (response.ok) {
+        router.push("/login");
+      } else {
+        alert("Failed to logout. Please try again.");
+      }
+    } catch (err) {
+      console.error("Logout error:", err);
+      alert("An error occurred during logout.");
+    }
+  };
   return (
 <SidebarProvider>
       <AppSidebar />
@@ -23,19 +32,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
           <Separator orientation="vertical" className="mr-2 h-4" />
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">
-                  Building Your Application
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block" />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+          <h1 className="text-2xl font-bold text-gray-800">Sales Admin</h1>
+          <Button variant="destructive" onClick={handleLogout} style={{ marginLeft: "auto"}}>
+            Logout
+          </Button>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
             {children}
