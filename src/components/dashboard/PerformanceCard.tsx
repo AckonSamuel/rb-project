@@ -63,7 +63,7 @@ const PerfomanceChart: FC<PerfomanceData> = ({ data }) => {
                 padding: 8,
             },
             // Ignore TypeScript error
-            // @ts-ignore
+            // @ts-expect-error
             centerText: {
                 text: "565K", // Total Count value
                 subtext: "Total Count", // Description text
