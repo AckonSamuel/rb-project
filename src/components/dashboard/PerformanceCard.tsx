@@ -53,8 +53,7 @@ const PerfomanceChart: FC<PerfomanceData> = ({ data }) => {
                     weight: "bold",
                     size: 14,
                 },
-                formatter: (value: number, context: any) => {
-                    const label = context.chart.data.labels[context.dataIndex];
+                formatter: (value: number) => {
                     const percentage = `${value}%`;
                     return `${percentage}`; // Display percentage
                 },

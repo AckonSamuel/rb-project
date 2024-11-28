@@ -1,9 +1,8 @@
 "use client"
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { TrendingUp } from "lucide-react";
-import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
-import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { BarChart, Bar, Tooltip, ResponsiveContainer } from "recharts";
+import { ChartConfig, ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
 import { FC } from "react";
 
 interface RevenueData {

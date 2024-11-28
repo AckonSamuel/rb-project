@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { formatDate } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
 import { FC } from "react";
 
 interface UpdateData {
