@@ -65,7 +65,7 @@ const PerfomanceChart: FC<PerfomanceData> = ({ data }) => {
             // Ignore TypeScript error
             // @ts-expect-error: The third-party library lacks TypeScript definitions
             centerText: {
-                text: "565K", // Total Count value
+                text: data.total_count, // Total Count value
                 subtext: "Total Count", // Description text
                 fontSize: 20, // Font size for the main text
                 subtextFontSize: 12, // Font size for subtext

@@ -11,7 +11,6 @@ import { BsShieldLockFill } from "react-icons/bs";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -110,10 +109,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarGroupContent>
           </SidebarGroup>
         ))}
-      </SidebarContent>
-      <SidebarFooter>
+              <div className="mt-8">
         <p className="text-white text-center text-sm">Version {data.versions[0]}</p>
-      </SidebarFooter>
+      </div>
+      </SidebarContent>
       <SidebarRail />
     </Sidebar>
   )
