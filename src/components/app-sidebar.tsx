@@ -11,7 +11,6 @@ import { BsShieldLockFill } from "react-icons/bs";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
