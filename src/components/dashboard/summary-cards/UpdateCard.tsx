@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {formatDate} from "@/lib/utils";
+import {ChevronRight} from "lucide-react";
 import {FC} from "react";
 
 interface UpdateData {
@@ -22,8 +23,11 @@ const UpdateCard: FC<UpdateData> = ({data}) => {
           in 1 week
         </div>
       </div>
-      <a href="#" className="mt-6 block text-gray-400 text-xs underline mb-4 hover:text-white">
-        See Statistics
+      <a
+        href="#"
+        className=" flex mt-6 block text-gray-400 text-xs underline-none mb-4 hover:text-white"
+      >
+        See Statistics <ChevronRight size={15} className="my-auto" />
       </a>
     </div>
   );
