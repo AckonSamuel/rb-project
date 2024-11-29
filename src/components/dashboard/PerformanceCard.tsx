@@ -27,8 +27,8 @@ const PerfomanceChart: FC<PerfomanceData> = ({ data }) => {
         datasets: [
             {
                 data: [viewCount, percentage, sales],
-                backgroundColor: ["#ccff00", "#062606", "#ff9900"],
-                hoverBackgroundColor: ["#bbff00", "#055506", "#e68a00"],
+                backgroundColor: ["#1F8E09", "#9BF22B", "#ff9900"],
+                hoverBackgroundColor: ["#055506", "#bbff00", "#e68a00"],
             },
         ],
     };
@@ -115,11 +115,11 @@ const PerfomanceChart: FC<PerfomanceData> = ({ data }) => {
             <Button variant="outline" className="border-gray-800 text-gray-800">Guide views</Button>
             <div className="flex items-center border-t border-gray-500 gap-2 pt-4">
                 <div className="flex items-center gap-1">
-                    <div className="w-3 h-3 bg-inch-worm rounded-sm"></div>
+                    <div className="w-3 h-3 bg-[#9BF22B] rounded-sm"></div>
                     <span className="text-xs text-gray-600">View Count</span>
                 </div>
                 <div className="flex items-center gap-1">
-                    <div className="w-3 h-3 bg-emerald rounded-sm"></div>
+                    <div className="w-3 h-3 bg-[#1F8E09]  rounded-sm"></div>
                     <span className="text-xs text-gray-600">Percentage</span>
                 </div>
                 <div className="flex items-center gap-1">
