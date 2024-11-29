@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
-import { Eye, EyeOff } from 'lucide-react';
+import React, {useState} from "react";
+import {useForm} from "react-hook-form";
+import {Button} from "@/components/ui/button";
+import {Input} from "@/components/ui/input";
+import {Card} from "@/components/ui/card";
+import {Eye, EyeOff} from "lucide-react";
 import toast from "react-hot-toast";
 import Spinner from "@/components/ui/Spinner"; // Import Spinner component
-import { Checkbox } from "./ui/checkbox";
+import {Checkbox} from "./ui/checkbox";
 
 type LoginForm = {
   email: string;
@@ -15,7 +15,11 @@ type LoginForm = {
 };
 
 const LoginPage: React.FC = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<LoginForm>();
+  const {
+    register,
+    handleSubmit,
+    formState: {errors},
+  } = useForm<LoginForm>();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -29,7 +33,7 @@ const LoginPage: React.FC = () => {
     try {
       const response = await fetch("/api/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data),
       });
 
@@ -63,7 +67,7 @@ const LoginPage: React.FC = () => {
               <Input
                 id="email"
                 type="email"
-                {...register("email", { required: "Email is required" })}
+                {...register("email", {required: "Email is required"})}
                 className="w-full rounded-full"
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
@@ -77,7 +81,7 @@ const LoginPage: React.FC = () => {
               <Input
                 id="password"
                 type={showPassword ? "text" : "password"}
-                {...register("password", { required: "Password is required" })}
+                {...register("password", {required: "Password is required"})}
                 className="w-full rounded-full border-gradient-to-r from-[#2E7D32] to-[#9fea2e]"
               />
               <button
@@ -110,7 +114,7 @@ const LoginPage: React.FC = () => {
               className="w-full rounded-full bg-gradient-to-r from-[#2E7D32] to-[#9fea2e] text-lg relative"
             >
               {loading ? (
-                <Spinner />  // Show spinner while loading
+                <Spinner /> // Show spinner while loading
               ) : (
                 "Login"
               )}
@@ -121,7 +125,7 @@ const LoginPage: React.FC = () => {
         {/* Right Section - Image */}
         <div className="hidden md:flex flex-1 items-center justify-center">
           <img
-            src="/forest-image.png"  // Replace with your image URL
+            src="/forest-image.png" // Replace with your image URL
             alt="Forest"
             className="rounded-md w-full max-w-md"
           />
