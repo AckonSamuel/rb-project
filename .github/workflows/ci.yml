@@ -17,26 +17,30 @@ jobs:
         node-version: [18]
 
     steps:
-    # Checkout the code
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    # Set up Node.js
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    # Install dependencies
-    - name: Install dependencies
-      run: yarn install --frozen-lockfile
+      # Install dependencies
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-    # Run linters
-    - name: Run ESLint
-      run: yarn lint
+      # Run Prettier check
+      - name: Run Prettier
+        run: yarn prettier --check "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}"
 
-    # Run tests
-    - name: Run Jest tests
-      env:
-        CI: true
-      run: yarn test
+      # Run linters
+      - name: Run ESLint
+        run: yarn lint
+
+      # Run tests
+      - name: Run Jest tests
+        env:
+          CI: true
+        run: yarn test

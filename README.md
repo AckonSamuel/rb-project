@@ -1,9 +1,11 @@
 # RB SEF Dashboard
 
 ## Project Overview ([live link](https://rainforestbuilder.netlify.app/))
+
 This web application was developed as a take-home assignment for RB, featuring a secure login system and a comprehensive dashboard for displaying reports. The project demonstrates proficiency in modern web development technologies and best practices.
 
 ## 🚀 Project Requirements
+
 - [x] Implement login functionality using provided API
 - [x] Create dashboard to display reports
 - [x] Use React and Next.js
@@ -14,18 +16,20 @@ This web application was developed as a take-home assignment for RB, featuring a
 - [x] Invite `kofi-teddy` to the repository
 
 ## 🛠 Technologies Used
+
 - **Framework**: Next.js
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Form Management**: react-hook-form
 - **HTTP Requests**: axios
-- **Testing**: 
+- **Testing**:
   - Jest
   - React Testing Library
 - **Deployment**: Netlify
 - **CI/CD**: GitHub Actions
 
 ## 📋 Prerequisites
+
 - Node.js (v18 or later)
 - npm or yarn
 - GitHub account
@@ -33,12 +37,14 @@ This web application was developed as a take-home assignment for RB, featuring a
 ## 🔧 Local Setup
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/AckonSamuel/rb-project.git
 cd rb-project
 ```
 
 ### 2. Install dependencies
+
 ```bash
 npm install --legacy-peer-deps
 # or
