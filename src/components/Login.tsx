@@ -55,7 +55,7 @@ const LoginPage: React.FC = () => {
     <div className="max-h-screen bg-gray-100 flex items-center justify-center py-14">
       <Card className="w-full md:w-[70%] flex flex-col md:flex-row p-6">
         {/* Left Section - Login Form */}
-        <div className="flex-1 space-y-4 pl-12 pr-16 pt-16">
+        <div className="flex-1 space-y-4 pl-12 max-sm:pl-4 max-sm:pr-6 pr-16 pt-16">
           <h2 className="text-2xl font-bold text-[#9fea2e] mb-2">Login</h2>
           <p className="text-gray-600 mb-6 text-md">How do I get started?</p>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
