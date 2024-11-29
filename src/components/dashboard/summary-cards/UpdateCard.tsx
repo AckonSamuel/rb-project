@@ -10,7 +10,7 @@ const UpdateCard: FC<UpdateData> = ({ data }) => {
     // Prepare data for the Revenue Breakdown chart
 
     return (
-        <div className="flex flex-col justify-between bg-green-900 text-white p-4 rounded-lg w-30 h-24 pb-36">
+        <div className="flex flex-col justify-between bg-[#002606] text-white p-4 rounded-lg w-30 h-24 pb-36">
             <div className="flex items-center mb-2">
                 <div className="h-2 w-2 bg-red-500 rounded-full mr-2"></div>
                 <span className="text-sm font-medium">Update</span>
