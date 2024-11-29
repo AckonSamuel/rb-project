@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { Card } from "@/components/ui/card";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,8 +11,10 @@ import {
   Legend,
   ArcElement,
 } from "chart.js";
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-import BarLoader from 'react-spinners/BarLoader'
+import ChartDataLabels from "chartjs-plugin-datalabels";
+import BarLoader from "react-spinners/BarLoader";
+
+import {Card} from "@/components/ui/card";
 import Layout from "@/components/layout";
 import RevenueChart from "@/components/dashboard/RevenueChart";
 import SalesReport from "@/components/dashboard/SalesReport";
@@ -24,13 +25,22 @@ import DashboardDatePicker from "@/components/DashboardDatePicker";
 import PerformanceCard from "@/components/dashboard/PerformanceCard";
 import UpgradeCard from "@/components/dashboard/UpgradeCard";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartDataLabels, ArcElement);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ChartDataLabels,
+  ArcElement,
+);
 
 type DashboardProps = {
   token: string | null;
 };
 
-const Dashboard: React.FC<DashboardProps> = ({ token }) => {
+const Dashboard: React.FC<DashboardProps> = ({token}) => {
   const [reportData, setReportData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -40,12 +50,13 @@ const Dashboard: React.FC<DashboardProps> = ({ token }) => {
       if (!token) {
         setError("No authentication token");
         setLoading(false);
+
         return;
       }
 
       try {
         const response = await axios.get("/api/report-summary", {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: {Authorization: `Bearer ${token}`},
         });
 
         setReportData(response.data.data);
@@ -76,17 +87,19 @@ const Dashboard: React.FC<DashboardProps> = ({ token }) => {
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50">
-        <div className="grid w-full grid-cols-1" style={{ gridTemplateColumns: '4fr 1fr' }}>
+        <div className="grid w-full grid-cols-1" style={{gridTemplateColumns: "4fr 1fr"}}>
           <div className="">
             <div className="flex justify-between items-start p-6">
               <div className="flex flex-col">
                 <h1 className="text-2xl font-bold text-gray-800 -mt-4">Dashboard</h1>
-                <p className="text-gray-500 text-xs">An any way to manage sales with care and precision</p>
+                <p className="text-gray-500 text-xs">
+                  An any way to manage sales with care and precision
+                </p>
               </div>
-              <DashboardDatePicker className="text-gray-500 -mt-4"/>
+              <DashboardDatePicker className="text-gray-500 -mt-4" />
             </div>
             <div className="grid w-full grid-cols-1 -mt-4 md:grid-cols-3 gap-2 p-6">
-              <UpdateCard data={reportData.update}/>
+              <UpdateCard data={reportData.update} />
               <NetIncomeCard data={reportData.net_income} />
               <TotalReturnCard data={reportData.total_return} />
             </div>
@@ -110,7 +123,7 @@ const Dashboard: React.FC<DashboardProps> = ({ token }) => {
 };
 
 export const getServerSideProps = async (context: any) => {
-  const { req } = context;
+  const {req} = context;
   const token = req.cookies?.token;
 
   console.log(token);
