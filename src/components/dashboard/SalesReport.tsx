@@ -17,9 +17,9 @@ const SalesReport: FC<SalesData> = ({ data }) => {
     ];
 
     const barChartConfig = {
-        sold: { label: "Sold", color: "#ccff00" },
-        launched: { label: "Launched", color: "#ccff00" },
-        ongoing: { label: "Ongoing", color: "#ccff00" },
+        sold: { label: "Sold", color: "#9BF22B" },
+        launched: { label: "Launched", color: "#9BF22B" },
+        ongoing: { label: "Ongoing", color: "#9BF22B" },
     } satisfies ChartConfig;
 
     return (
@@ -28,7 +28,7 @@ const SalesReport: FC<SalesData> = ({ data }) => {
                 <span className="text-lg font-medium text-gray-700">Sales Report</span>
                 <div className="text-gray-700 text-lg font-semibold cursor-pointer">...</div>
             </div>
-            <ChartContainer config={barChartConfig} className="w-60 h-56">
+            <ChartContainer config={barChartConfig} className="w-60 h-56 bg-[#F8F8F8]">
                 <ResponsiveContainer>
                     <BarChart
                         data={barChartData}
@@ -46,7 +46,7 @@ const SalesReport: FC<SalesData> = ({ data }) => {
                             hide
                         />
                         <Tooltip cursor={false} />
-                        <Bar dataKey="value" fill="#ccff00" radius={4} barSize={20}>
+                        <Bar dataKey="value" fill="#9BF22B" radius={4} barSize={20}>
                             <LabelList
                                 dataKey="combined"
                                 position="right"
