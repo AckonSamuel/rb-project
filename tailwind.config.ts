@@ -51,16 +51,16 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			},
   			sidebar: {
-  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				DEFAULT: '#002000',
   				foreground: '#9e9a9a',
   				primary: 'hsl(var(--sidebar-primary))',
   				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-  				accent: 'hsl(var(--sidebar-accent))',
+  				accent: '#062606',
   				'accent-foreground': '#e6e5e4',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-			'deep-forest-green': '#062606', 
+			'deep-forest-green': '#062006', 
 			'mercury': '#e6e5e4', 
 			'inch-worm': '#9fea2e', 
 			'xanadu': '#7e887f', 
@@ -78,5 +78,5 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('tailwind-scrollbar-hide')],
 } satisfies Config;

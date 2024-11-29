@@ -47,7 +47,7 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --sidebar-background: 122 86% 14%; /* deep-forest-green (#062606) */
+    --sidebar-background: 122 86% 14%; /* deep-forest-green (#020502) */
     --sidebar-foreground: 75 96% 45%; /* inch-worm (#e6e5e4) */
     --sidebar-primary: 0 0% 98%; /* mercury (#e6e5e4) */
     --sidebar-primary-foreground: 0 0% 98%; /* Same as mercury */
@@ -81,7 +81,7 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sidebar-background: 122 86% 14%; /* deep-forest-green (#062606) */
+    --sidebar-background: 122 86% 14%; /* deep-forest-green (#020502) */
     --sidebar-foreground: 75 96% 45%; /* inch-worm (#e6e5e4) */
     --sidebar-primary: 0 0% 98%; /* mercury (#e6e5e4) */
     --sidebar-primary-foreground: 0 0% 100%; /* White for contrast */
@@ -100,3 +100,15 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide scrollbars for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+

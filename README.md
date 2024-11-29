@@ -15,14 +15,14 @@ This web application was developed as a take-home assignment for RB, featuring a
 
 ## 🛠 Technologies Used
 - **Framework**: Next.js
-- **Language**: TypeScript (Optional Enhancement)
+- **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Form Management**: react-hook-form
 - **HTTP Requests**: axios
 - **Testing**: 
   - Jest
   - React Testing Library
-- **Deployment**: Vercel/Netlify
+- **Deployment**: Netlify
 - **CI/CD**: GitHub Actions
 
 ## 📋 Prerequisites
