@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/sidebar"
 import { Button } from "./ui/button"
 import { useRouter } from "next/router";
+import { ChevronDown } from "lucide-react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -33,6 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <SidebarTrigger className="-ml-1" />
           <Separator orientation="vertical" className="mr-2 h-4" />
           <h1 className="text-2xl font-bold text-gray-800">Sales Admin</h1>
+          <ChevronDown className="text-gray-500"/>
           <Button variant="destructive" onClick={handleLogout} style={{ marginLeft: "auto"}}>
             Logout
           </Button>
