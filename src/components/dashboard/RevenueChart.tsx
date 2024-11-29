@@ -71,7 +71,7 @@ const RevenueChart: FC<RevenueData> = ({data}) => {
           </div>
         </div>
       </div>
-      <ChartContainer config={chartConfig} className="h-40 w-80 bg-[#F5F2F3]">
+      <ChartContainer config={chartConfig} className="h-40 max-xl:w-48 bg-[#F5F2F3]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={chartData} barCategoryGap="20%" barGap={2}>
             <Tooltip cursor={false} content={<ChartTooltipContent indicator="dashed" />} />

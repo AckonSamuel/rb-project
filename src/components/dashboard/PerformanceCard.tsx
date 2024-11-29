@@ -106,8 +106,8 @@ const PerfomanceChart: FC<PerfomanceData> = ({data}) => {
 
   return (
     <div
-      className="flex flex-col gap-4 chart-container border border-gray-800 rounded-lg px-4"
-      style={{width: "250px", height: "380px"}}
+      className="flex flex-col gap-4 max-md:w-[100%] w-[250px] chart-container border border-gray-800 rounded-lg px-4"
+      style={{height: "380px"}}
     >
       <div className="border-b border-gray-500 py-2">
         <h3 className="text-center text-md font-bold text-gray-900">Total View Performance</h3>

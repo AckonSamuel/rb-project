@@ -27,7 +27,7 @@ export default function Layout({children}: {children: React.ReactNode}) {
       <SidebarInset>
         <div className="bg-white">
           <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
-            <SidebarTrigger className="-ml-1" />
+            <SidebarTrigger className="-ml-1 max-md:text-gray-700" />
             <Separator orientation="vertical" className="mr-2 h-4" />
             <h1 className="text-2xl font-bold text-gray-800">Sales Admin</h1>
             <ChevronDown className="text-gray-500" />

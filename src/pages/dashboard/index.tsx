@@ -87,16 +87,16 @@ const Dashboard: React.FC<DashboardProps> = ({token}) => {
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50">
-        <div className="grid w-full grid-cols-1" style={{gridTemplateColumns: "4fr 1fr"}}>
+        <div className="grid w-full grid-cols-1 lg:grid-cols-[4fr_1fr]">
           <div className="">
-            <div className="flex justify-between items-start p-6">
+            <div className="flex max-md:flex-col justify-between items-start p-6">
               <div className="flex flex-col">
                 <h1 className="text-2xl font-bold text-gray-800 -mt-4">Dashboard</h1>
                 <p className="text-gray-500 text-xs">
                   An any way to manage sales with care and precision
                 </p>
               </div>
-              <DashboardDatePicker className="text-gray-500 -mt-4" />
+              <DashboardDatePicker className="text-gray-500 -mt-4 max-md:mt-4" />
             </div>
             <div className="grid w-full grid-cols-1 -mt-4 md:grid-cols-3 gap-2 p-6">
               <UpdateCard data={reportData.update} />
@@ -112,7 +112,7 @@ const Dashboard: React.FC<DashboardProps> = ({token}) => {
               </Card>
             </div>
           </div>
-          <div className="flex flex-col mt-8 gap-10">
+          <div className="flex max-sm:items-center flex-col mt-8 gap-10">
             <PerformanceCard data={reportData.total_view_perfomance} />
             <UpgradeCard />
           </div>

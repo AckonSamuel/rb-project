@@ -21,18 +21,18 @@ const SalesReport: FC<SalesData> = ({data}) => {
   const barChartData = [
     {
       label: "Launched",
-      value: data.product_launched || 233,
-      combined: `Product Launched ${data.product_launched || 233}`,
+      value: data.product_launched || 0,
+      combined: `Product Launched ${data.product_launched || 0}`,
     },
     {
       label: "Ongoing",
-      value: data.ongoing_product || 23,
-      combined: `Product Ongoing ${data.ongoing_product || 23}`,
+      value: data.ongoing_product || 0,
+      combined: `Product Ongoing ${data.ongoing_product || 0}`,
     },
     {
       label: "Sold",
-      value: data.product_sold || 482,
-      combined: `Product Sold ${data.product_sold || 482}`,
+      value: data.product_sold || 0,
+      combined: `Product Sold ${data.product_sold || 0}`,
     },
   ];
 
@@ -48,8 +48,8 @@ const SalesReport: FC<SalesData> = ({data}) => {
         <span className="text-lg font-medium text-gray-700">Sales Report</span>
         <div className="text-gray-700 text-lg font-semibold cursor-pointer">...</div>
       </div>
-      <ChartContainer config={barChartConfig} className="w-60 h-56 bg-[#F8F8F8]">
-        <ResponsiveContainer>
+      <ChartContainer config={barChartConfig} className="max-xl:h-60 max-xl:w-60 bg-[#F8F8F8]">
+        <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={barChartData}
             layout="vertical"
