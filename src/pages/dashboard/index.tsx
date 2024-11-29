@@ -91,10 +91,10 @@ const Dashboard: React.FC<DashboardProps> = ({ token }) => {
               <TotalReturnCard data={reportData.total_return} />
             </div>
             <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-6 p-6">
-              <Card className="pt-8">
+              <Card className="pt-8 bg-[#F8F8F8]">
                 <SalesReport data={reportData.sales_report} />
               </Card>
-              <Card>
+              <Card className="bg-[#F5F2F3]">
                 <RevenueChart data={reportData.revenue} />
               </Card>
             </div>
