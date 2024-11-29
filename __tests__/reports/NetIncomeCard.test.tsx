@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import NetIncomeCard from '@/components/dashboard/summary-cards/NetIncome';
+import {render, screen} from "@testing-library/react";
+import NetIncomeCard from "@/components/dashboard/summary-cards/NetIncome";
 import "@testing-library/jest-dom";
 
 const mockData = {
@@ -8,8 +8,8 @@ const mockData = {
   percentage_change: "35%",
 };
 
-describe('NetIncomeCard Component', () => {
-  it('renders net income card with provided data', () => {
+describe("NetIncomeCard Component", () => {
+  it("renders net income card with provided data", () => {
     render(<NetIncomeCard data={mockData} />);
 
     // Check if the currency is rendered

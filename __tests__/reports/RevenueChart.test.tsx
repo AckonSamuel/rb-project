@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import {render, screen} from "@testing-library/react";
 import RevenueChart from "@/components/dashboard/RevenueChart";
 import "@testing-library/jest-dom";
 
@@ -16,12 +16,12 @@ describe("RevenueChart Component", () => {
     currency: "GHS",
     percentage_change: "35%",
     break_down: [
-      { week: 1, revenue: "1000", expense: "800" },
-      { week: 2, revenue: "700", expense: "900" },
-      { week: 3, revenue: "1200", expense: "900" },
-      { week: 4, revenue: "10000", expense: "900" },
-      { week: 5, revenue: "800", expense: "500" },
-      { week: 6, revenue: "6500", expense: "500" },
+      {week: 1, revenue: "1000", expense: "800"},
+      {week: 2, revenue: "700", expense: "900"},
+      {week: 3, revenue: "1200", expense: "900"},
+      {week: 4, revenue: "10000", expense: "900"},
+      {week: 5, revenue: "800", expense: "500"},
+      {week: 6, revenue: "6500", expense: "500"},
     ],
   };
 
@@ -37,7 +37,6 @@ describe("RevenueChart Component", () => {
     expect(screen.getByText("GHS")).toBeInTheDocument();
     expect(screen.getByText("300000")).toBeInTheDocument();
     expect(screen.getByText("+35%")).toBeInTheDocument();
-
   });
 
   it("prepares the data for the chart correctly", () => {
@@ -52,12 +51,12 @@ describe("RevenueChart Component", () => {
 
     // Check if the mapped data matches the chart's data
     expect(chartData).toEqual([
-      { week: "Week 1", revenue: 1000, expense: 800 },
-      { week: "Week 2", revenue: 700, expense: 900 },
-      { week: "Week 3", revenue: 1200, expense: 900 },
-      { week: "Week 4", revenue: 10000, expense: 900 },
-      { week: "Week 5", revenue: 800, expense: 500 },
-      { week: "Week 6", revenue: 6500, expense: 500 },
+      {week: "Week 1", revenue: 1000, expense: 800},
+      {week: "Week 2", revenue: 700, expense: 900},
+      {week: "Week 3", revenue: 1200, expense: 900},
+      {week: "Week 4", revenue: 10000, expense: 900},
+      {week: "Week 5", revenue: 800, expense: 500},
+      {week: "Week 6", revenue: 6500, expense: 500},
     ]);
   });
 

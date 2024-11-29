@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import SalesChart from '@/components/dashboard/SalesReport';
-import '@testing-library/jest-dom';
+import {render, screen} from "@testing-library/react";
+import SalesChart from "@/components/dashboard/SalesReport";
+import "@testing-library/jest-dom";
 
 // Mock data for the test
 const mockSalesData = {
@@ -10,15 +10,15 @@ const mockSalesData = {
 };
 
 beforeAll(() => {
-    global.ResizeObserver = class {
-        observe() { }
-        unobserve() { }
-        disconnect() { }
-    };
+  global.ResizeObserver = class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
 });
 
-describe('SalesChart Component', () => {
-  it('renders the sales chart correctly with mock data', () => {
+describe("SalesChart Component", () => {
+  it("renders the sales chart correctly with mock data", () => {
     render(<SalesChart data={mockSalesData} />);
 
     // Check that the labels for the bars are rendered correctly

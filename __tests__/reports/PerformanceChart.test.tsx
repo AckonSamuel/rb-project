@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
-import '@testing-library/jest-dom';
+import {render, screen} from "@testing-library/react";
+import "@testing-library/jest-dom";
 import PerformanceCard from "@/components/dashboard/PerformanceCard";
 
 jest.mock("react-chartjs-2", () => ({
@@ -23,7 +23,7 @@ describe("PerformanceCard Component", () => {
   it("displays additional text elements and button", () => {
     render(<PerformanceCard data={mockData} />);
     expect(screen.getByText("Here are some tips on how to improve your score")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /guide views/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", {name: /guide views/i})).toBeInTheDocument();
   });
 
   it("renders the legend with correct colors and labels", () => {
